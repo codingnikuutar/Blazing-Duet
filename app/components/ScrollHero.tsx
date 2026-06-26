@@ -13,14 +13,14 @@ import { motion } from "framer-motion";
  * REMOTE mode (current): uses the Higgsfield CDN images directly in the browser.
  * hero.mp4: https://d8j0ntlcm91z4.cloudfront.net/user_3FdJ9O1M38AiRMxHAprUmX5e5g6/hf_20260626_015643_f1b97aaa-aaec-47ed-bde3-54d46154f58f.mp4
  */
-const FRAME_MODE = "remote" as "remote" | "local";
+const FRAME_MODE = "local" as "remote" | "local";
 
 const REMOTE_FRAMES = [
   "https://d8j0ntlcm91z4.cloudfront.net/user_3FdJ9O1M38AiRMxHAprUmX5e5g6/hf_20260625_145912_6e456c35-5857-4fe7-ab89-b9f3e0d85a03.png",
   "https://d8j0ntlcm91z4.cloudfront.net/user_3FdJ9O1M38AiRMxHAprUmX5e5g6/hf_20260625_150004_c09c9491-01cd-4ed3-b69d-a581ba02328f.png",
 ];
 
-const LOCAL_FRAME_COUNT = 240;
+const LOCAL_FRAME_COUNT = 122;
 const pad = (n: number) => String(n).padStart(4, "0");
 const LOCAL_FRAMES = Array.from(
   { length: LOCAL_FRAME_COUNT },
