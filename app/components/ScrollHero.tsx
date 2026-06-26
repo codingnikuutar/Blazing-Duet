@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 
 /**
  * Frame sources for the scroll-driven scrub.
- * When hero.mp4 is available, extract frames with:
- *   ffmpeg -i hero.mp4 -vf "fps=24,scale=1920:-1" -q:v 3 "public/frames/frame_%04d.jpg"
- * then set FRAME_MODE to "local" and FRAME_COUNT to the extracted frame total.
  *
- * In demo mode the two Higgsfield-generated images (assembled → exploded) serve
- * as the anchor frames; the canvas crossfades between them as you scroll.
+ * LOCAL mode (production): extract frames from hero.mp4 with
+ *   ffmpeg -i public/hero.mp4 -vf "fps=24,scale=1920:-1" -q:v 3 "public/frames/frame_%04d.jpg"
+ * then set FRAME_MODE to "local" and LOCAL_FRAME_COUNT to the actual count.
+ *
+ * REMOTE mode (current): uses the Higgsfield CDN images directly in the browser.
+ * hero.mp4: https://d8j0ntlcm91z4.cloudfront.net/user_3FdJ9O1M38AiRMxHAprUmX5e5g6/hf_20260626_015643_f1b97aaa-aaec-47ed-bde3-54d46154f58f.mp4
  */
 const FRAME_MODE = "remote" as "remote" | "local";
 
